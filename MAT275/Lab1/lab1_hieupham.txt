@@ -1,0 +1,74 @@
+format compact
+% MAT 275 MATLAB Assignment # 1
+% Exercise 1
+Theta=[0;pi/4;pi/2;3*pi/4;5*pi/4];
+r = 2;
+x = (r*cos(Theta))
+x =
+    2.0000
+    1.4142
+    0.0000
+   -1.4142
+   -1.4142
+y = (r*sin(Theta))
+y =
+         0
+    1.4142
+    2.0000
+    1.4142
+   -1.4142
+radius = sqrt(x.^2+y.^2)
+radius =
+     2
+     2
+     2
+     2
+     2
+% Exercise 2
+T = linspace(1,10,91);
+y = (exp((T./10)).*sin(T))./(T.^2+1);
+plot(y,'k')
+title('y=[(e^(T/10))(sin(T)]/(T^2+1)')
+% Exercise 2, Part B
+T = linspace(1,10,91);
+y = (exp((T./10)).*sin(T))./(T.^2+1);
+plot(T,y,'o-')
+title('y=[(e^(T/10))(sin(T)]/(T^2+1)')
+% Exercise 3
+T = 0:0.1:20;
+x = sin(T);
+y = cos(T);
+z = T;
+plot3(x,y,z)
+title('Circular Helix')
+% Exercise 4
+x = 0:0.1:pi;
+y = cos(x);
+z = (1-((x.^2)/2)+((x.^4)/24));
+plot(x,y,'r',x,z,'--')
+grid on
+title('Exercise 4')
+% Exercise 5
+edit
+fschange('C:\matlabR12\work\ex5.m');
+clear ex5
+ex5
+grid on
+% Exercise 6, part A
+f=inline('x^3+(y*exp(x))/(x+1)','x','y')
+f =
+     Inline function:
+     f(x,y) = x^3+(y*exp(x))/(x+1)
+f(2,-1)
+ans =
+    5.5370
+% Exercise 6, part B
+clear f
+edit
+fschange('C:\matlabR12\work\f.m');
+clear f
+clear f
+f(2,-1)
+ans =
+    5.5370
+diary off
